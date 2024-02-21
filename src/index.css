@@ -7,6 +7,8 @@ body {
     margin: 0;
 }
 
+
+
 header {
     display: flex;
     align-items: center;
@@ -15,6 +17,8 @@ header {
     color: white;
     padding: 1.25rem;
 }
+
+
 
 .header--image {
     height: 100%;
@@ -31,35 +35,39 @@ header {
     font-weight: 500;
 }
 
-.meme {
-    display: flex;
-    flex-direction: column;
+main {
+    
     padding: 2rem;
     
 }
 
 .form {
-    display: flex;
-    flex-direction: row;
-    margin: 1rem 0;
+    display: grid;
+    grid-template: 100% 100% / 1fr 1fr;
+    gap: 17px;
 }
 
-.input {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
+.form--label {
+    margin-bottom: 5px;
 }
 
-
-.label {
-    font-size: 0.75rem;
+.form--input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: .3rem;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+    height: 35px;
+    width: 100%;
 }
 
-
-button {
+.form--button {
+    grid-column: 1 / -1;
     background-image: linear-gradient(#672280, #A626D3);
     color: white;
     border: none;
     border-radius: .3rem;
     height: 2.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
 }
+
