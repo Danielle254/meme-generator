@@ -51,6 +51,7 @@ export default function Meme() {
                 <input 
                 className="form--input" 
                 type="text" 
+                value={meme.topText}
                 placeholder="Shut up" 
                 onChange={handleTopText} /></label>
             </div>
@@ -60,6 +61,7 @@ export default function Meme() {
                 className="form--input" 
                 type="text" 
                 id="bottomText" 
+                value={meme.bottomText}
                 placeholder="And take my money" 
                 onChange={handleBottomText} /></label>
             </div>
