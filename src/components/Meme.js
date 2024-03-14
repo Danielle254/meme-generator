@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import memesData from "../memesData"
+
 
 export default function Meme() {
     
+
     const [meme, setMeme] = useState(
         {
         topText: "",
@@ -11,11 +12,17 @@ export default function Meme() {
         }
     )
     
+    const [allMemes, setAllMemes] = useState([])
+
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMemes(data.data.memes))
+    }, [])
     
     function newMeme() {
-        const memesArray = memesData.data.memes;
-        const index = Math.floor(Math.random() * memesArray.length);
-        const newUrl = memesArray[index].url
+        const index = Math.floor(Math.random() * allMemes.length);
+        const newUrl = allMemes[index].url
         setMeme(prevMeme => (
            {
             ...prevMeme,
